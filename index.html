@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Second Try at trivia</title>
+</head>
+<body>
+  
+  
+  <div id="questions"><p>Question 1</p></div>
+  
+  <div class="choice" id="A" onclick="checkanswer('A')">A</div>
+  <div class="choice" id="B" onclick="checkanswer('B')">B</div>
+  <div class="choice" id="C" onclick="checkanswer('C')">C</div>
+
+  <div id="correct"></div>
+  <div id="inc"></div>
+  
+  <script type="text/javascript">
+    
+    $(document).ready(function() {
+    
+    var correct=0;
+    var inc =0;
+    
+    for (var i=0;i < questions.length; i++) {
+      var response  = window.prompt(questions[i].prompt);
+      if (response == questions[i].answer){
+        correct ++;
+      }
+      else{
+        inc++;
+      }
+      
+        <input id="q1a" type="checkbox" value="quest1a">
+        <input id="q1b" type="checkbox" value="quest1b">
+        <input id="q1c" type="checkbox" value="quest1c">
+        <input id="q1d" type="checkbox" value="quest1d">
+      
+    
+  
+  });
+</script>
+<script src = "assets/javascript/app.js"></script>
+</body>
+</html>
