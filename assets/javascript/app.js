@@ -1,9 +1,10 @@
-const question = document.getElementById("questions");
+const question = document.getElementById("question").innerHTML 
 const choiceA = document.getElementById("A");
 const choiceB = document.getElementById("B");
 const choiceC = document.getElementById("C");
 const correct = document.getElementById("correct");
 const incorrect = document.getElementById("inc");
+
 
 let questions = [
     {
@@ -33,25 +34,39 @@ let questions = [
 const lastQuestion = questions.length -1;
 let currentQuestion = 0;
 
-function renderQuestion (){
-    let q = questions[currentQuestion];
+ function renderQuestion (){
+//     for (var i=0;i < questions.length; i++) {
+//         let h2=$("<h2>").text(questions[i].question)
+        //           $("#question").append(h2);
 
-    question.innerHTML = "<p>" + q.question + "</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-}
+        for (let i = 0; i < questions.length; i++) {
+            let h2 = $("<h2>").text(questions[i].question);
+            $("#questions").append(h2);
+            for (let j = 0; j < questions[i].fields.length; j++) {
+        ​
+              let $form = $("<form>");
+        ​
+                let $input = $("<input>");
+        ​
+                $input.attr({
+                  type: "radio",
+                  name: "answer",
+                  value: questions[i].fields[j],
+                })
+        ​
+                let p = $("<p>").text(questions[i].fields[j])
+                $("#question").append(p, $input);
+            }}
+
 
 function checkAnswer(answer) {
-    if(answer == questions[currentQuestion].correct){
+    if(answer == questions[correct]){
         correct++
     }
     else {
         inc++
     }
-    if (currentQuestion < lastQuestion) {
-        currentquestion++
-    }
+   
 }
 
 function scoreRender() {
