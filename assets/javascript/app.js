@@ -10,23 +10,17 @@ let questions = [
     {
 
         question : "Who are you?",
-        choiceA : "I am me.",
-        choiceB : "Anyone I want to be.",
-        choiceC: "I'm Batman.",
+        answers : ["I am me.", "Anyone I want to be.", "I'm Batman."],
         correct:"A",
         
     },{
         question : "What is your purpose?",
-        choiceA : "I'm on a journey beyond sight and sound.",
-        choiceB : "To be.",
-        choiceC: "Rock and/or Roll..",
+        answers : ["I'm on a journey beyond sight and sound.", "To be.", "Rock and/or Roll.."],
         correct:"B",
 
     },{
         question : "Who won the Grammy for Best Album in 2001?",
-        choiceA : "Eminem",
-        choiceB : "N'Sync",
-        choiceC: "Steely Dan",
+        answers : ["Eminem", "N'Sync", "Steely Dan"],
         correct:"C",
     }
 ]
@@ -34,15 +28,13 @@ let questions = [
 const lastQuestion = questions.length -1;
 let currentQuestion = 0;
 
- function renderQuestion (){
-//     for (var i=0;i < questions.length; i++) {
-//         let h2=$("<h2>").text(questions[i].question)
-        //           $("#question").append(h2);
+ function renderQuestion (question){
+
 
         for (let i = 0; i < questions.length; i++) {
             let h2 = $("<h2>").text(questions[i].question);
-            $("#questions").append(h2);
-            for (let j = 0; j < questions[i].fields.length; j++) {
+            $("#question").append(h2);
+            for (let j = 0; j < questions[i].answers.length; j++) {
         ​
               let $form = $("<form>");
         ​
@@ -51,10 +43,10 @@ let currentQuestion = 0;
                 $input.attr({
                   type: "radio",
                   name: "answer",
-                  value: questions[i].fields[j],
+                  value: questions[i].answers[j],
                 })
         ​
-                let p = $("<p>").text(questions[i].fields[j])
+                let p = $("<p>").text(questions[i].answers[j])
                 $("#question").append(p, $input);
             }}
 

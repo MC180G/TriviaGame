@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src = "assets/javascript/app.js"></script>
     <title>Second Try at trivia</title>
 </head>
 <body>
   
-  <h1>Answer this Question!</h1>
+  <h2>Answer this Question!</h2>
   
-  <div id="question"></div>
+  <div id="question">Question</div>
   
   <form>
-  <input type="radio" name="answer" value="A">
-  <input type="radio" name="answer" value="B">
-  <input type="radio" name="answer" value="C">
+  <input type="radio" name="answers" value=0>A
+  <input type="radio" name="answers" value=1>B
+  <input type="radio" name="answers" value=2>C
 </form>
   
+
   <div id="correct"></div>
   <div id="inc"></div>
 
@@ -53,6 +55,5 @@
   
     });
 </script>
-<script src = "assets/javascript/app.js"></script>
 </body>
 </html>
